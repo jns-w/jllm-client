@@ -1,0 +1,125 @@
+@import "@/styles/mixins/media";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --border-radius: 12px;
+  --font-mono: ui-monospace, menlo, monaco, "Cascadia Mono", "Segoe UI Mono",
+  "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
+  "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+
+  --bg: linear-gradient(180deg, #f2f2f2 50%, #eee 100%);
+  --text: #222;
+  --text-gray: #303030;
+  --text-mild: #818181;
+  --accent: #2e57db;
+  --accent-mild: #ced6f0;
+  --accent-secondary: #903dd4;
+  --accent-gradient: linear-gradient(80deg, var(--accent), var(--accent-secondary));
+  --text-light: white;
+  --disabled: #dbdbdb;
+  --success: #579c11;
+  --warning: #bc8d2f;
+  --danger: #bc2f2f;
+  --card: #f9f9f9;
+  --card-gradient: linear-gradient(180deg, var(--card), #f6f6f6);
+  --card-mild: #e7e7e7;
+  --card-mild2: #dbdbdb;
+  --card-hover: #f5f5f5;
+  --card-outline: #e6e6e6;
+
+  /** Shadows */
+  --shadow: 0 1px 1px hsl(0deg 0% 0% / 4.5%),
+  0 2px 2px hsl(0deg 0% 0% / 3.5%),
+  0 4px 4px hsl(0deg 0% 0% / 3.5%),
+  0 10px 10px hsl(0deg 0% 0% / 4.5%),
+  0 20px 20px hsl(0deg 0% 0% / 4.5%);
+  --shadow-sm: 0 1px 1px hsl(0deg 0% 0% / 3.5%),
+  0 2px 2px hsl(0deg 0% 0% / 3.5%),
+  0 4px 4px hsl(0deg 0% 0% / 3.5%),
+  0 6px 6px hsl(0deg 0% 0% / 1.5%),
+  0 8px 8px hsl(0deg 0% 0% / 0.5%);
+
+  /** Spacing -- Radius */
+  --max-width: 1128px;
+  --global-padding: 24px;
+  --standard-radius: 8px;
+
+  /**
+   * Media Queries
+   * control max-width of all root divs
+   */
+  @include media(medium) {
+    --max-width: 1128px;
+  }
+
+  @include media(small) {
+    --max-width: 936px;
+  }
+
+  @include media(tablet) {
+    --max-width: 556px;
+  }
+
+  @include media(mobile) {
+    --max-width: 354px;
+    --global-padding: 8px;
+  }
+
+  @include media(mobile-s) {
+    --max-width: 330px;
+    --global-padding: 4px;
+  }
+
+  @include media(mobile-xs) {
+    --max-width: 310px;
+    --global-padding: 3px;
+  }
+
+  @include media(large) {
+    --max-width: 1560px;
+  }
+
+  @include media(x-large) {
+    --max-width: 2088px;
+  }
+}
+
+
+html[data-theme="dark"] {
+  --bg: black;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: var(--text);
+  background: var(--bg);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input {
+  all: unset;
+  cursor: pointer;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}

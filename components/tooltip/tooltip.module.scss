@@ -1,0 +1,12 @@
+.tooltipDiv {
+  padding: 5px 8px;
+  font-size: 12px;
+  background-color: var(--card);
+  border: var(--card-outline) solid 1px;
+  border-radius: 10px;
+  box-shadow: var(--shadow-sm);
+
+  svg:first-child { /* Tooltip arrow */
+    transform: translateY(-1.2px);
+  }
+}

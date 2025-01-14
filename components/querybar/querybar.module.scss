@@ -1,0 +1,204 @@
+@import "@/styles/mixins/media";
+
+.queryDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: center;
+  width: var(--max-width);
+  padding: 0 var(--global-padding);
+}
+
+.header {
+  color: var(--text-gray);
+  font-weight: 550;
+  font-size: 62px;
+  line-height: 120%;
+  letter-spacing: -1.2px;
+  text-align: center;
+}
+
+.description {
+  color: var(--text-gray);
+  font-weight: 450;
+  font-size: 17px;
+  text-align: center;
+}
+
+.whatsThisBtn {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 10px;
+  color: var(--text-mild);
+  font-size: 15px;
+  line-height: 120%;
+  background-color: var(--card-mild);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.button {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  font-size: 14px;
+
+  &.withBg {
+    padding: 10px 20px;
+    color: var(--text-light);
+    line-height: 120%;
+    background: var(--text);
+    border-radius: 50px;
+    transition: background-color 200ms ease-out;
+
+    &:hover {
+      background: var(--accent);
+    }
+  }
+
+  &.text {
+    height: fit-content;
+    border-bottom: transparent 1px solid;
+    transition: border 150ms linear;
+
+    &:hover {
+      border-bottom: var(--text) 1px solid;
+    }
+  }
+}
+
+.inputDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  width: 650px;
+  padding: 8px;
+  background-color: var(--card-mild);
+  border-radius: 20px;
+
+
+  .queryInput {
+    padding: 5px 10px 0;
+    font-weight: 400;
+    font-size: 20px;
+    cursor: text;
+
+    &::-webkit-outer-spin-button, &::-webkit-inner-spin-button {
+      margin: 0;
+      appearance: none;
+    }
+  }
+
+
+  .chipBtn {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 10px;
+    color: var(--text-mild);
+    font-weight: 500;
+    font-size: 13px;
+    background-color: var(--card-mild2);
+    border-radius: 100px;
+    cursor: pointer;
+    transition: background-color 200ms ease-out;
+
+    &.active {
+      color: var(--accent);
+      background-color: var(--accent-mild);
+    }
+  }
+
+  .sendBtn {
+    padding: 5px;
+    color: var(--text-light);
+    background-color: var(--text-mild);
+    border-radius: 100px;
+    cursor: default;
+    transition: background-color 80ms ease-out, color 80ms ease-out;
+
+    &.active {
+      background-color: var(--accent);
+      cursor: pointer;
+    }
+  }
+
+  @include media(tablet) {
+    width: var(--max-width);
+
+    .inputDiv {
+      width: 100%;
+    }
+  }
+
+  @include media(mobile) {
+    width: var(--max-width);
+
+    .queryInput {
+      font-size: 16px;
+    }
+
+    .chipBtn {
+        font-size: 10px;
+      padding: 2px 5px;
+    }
+  }
+}
+
+.txQueryInput {
+  padding: 15px 10px;
+  background-color: var(--card-mild);
+  border-radius: 20px;
+  cursor: text;
+}
+
+.txQueryBtn {
+  height: fit-content;
+  padding: 8px 15px;
+  color: var(--text-light);
+  background-color: var(--text-gray);
+  border-radius: 100px;
+}
+
+.callCardsHeaderDiv {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  color: var(--text-gray);
+
+  h4 {
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  .tipBtn {
+    color: var(--text-mild);
+    transition: color 150ms ease-out;
+
+    &:hover {
+      color: var(--text-gray);
+    }
+  }
+
+  .clearBtn {
+    padding: 2px 6px;
+    color: var(--text-mild);
+    font-weight: 600;
+    font-size: 12px;
+    background: var(--card-mild);
+    border: var(--card-outline) solid 1px;
+    border-radius: 5px;
+    transition: background-color 150ms ease-out, color 150ms ease-out;
+
+    &:hover {
+      color: var(--danger);
+      background: #ebc7c7;
+    }
+  }
+}

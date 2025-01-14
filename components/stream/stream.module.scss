@@ -1,0 +1,26 @@
+@import "@/styles/mixins/media";
+
+.streamWrapDiv {
+  width: var(--max-width);
+  display: flex;
+  justify-content: center;
+}
+
+.streamDiv {
+  background: var(--accent);
+  color: var(--text-light);
+  padding: 7px 15px;
+  border-radius: var(--standard-radius);
+  width: 650px;
+  font-size: 15px;
+
+  @include media(tablet) {
+    width: var(--max-width);
+  }
+
+  @include media(mobile) {
+    width: var(--max-width);
+    font-size: 13px;
+  }
+
+}
