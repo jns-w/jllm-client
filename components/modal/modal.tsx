@@ -1,6 +1,6 @@
 import { bgFilterMotionProps, modalMotionProps } from "@/components/modal/modal.motion"
 import { useEventListener, useOnClickOutside } from "usehooks-ts"
-import { Dispatch, ReactNode, useRef, useState } from "react"
+import { Dispatch, ReactNode, RefObject, useRef, useState } from "react"
 import { AnimatePresence, motion } from "motion/react"
 import { FloatingPortal } from "@floating-ui/react"
 import { clsx } from "clsx"
@@ -14,7 +14,7 @@ type ModalProps = {
 }
 
 export function Modal(props: ModalProps) {
-  const modalRef = useRef<HTMLDivElement>(null)
+  const modalRef = useRef<HTMLDivElement>(null) as RefObject<HTMLDivElement>
 
   useOnClickOutside(modalRef, () => props.showFn(false))
 
